@@ -1,0 +1,66 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title %}Bibi Geocode Web App{% endblock %}
+
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css/main.css')}}">
+{% endblock %}
+
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!--  -->
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+<!--Display the title and instruction of this website-->
+<div class="container-fluid padding">
+	<div class="row welcome text-center">
+		<div class="col-12 padding">
+			<h1 class="display-4">Find the Geocode of Addresses</h1>
+			<hr>
+			<div class="col-12">
+				<h3>Please upload your CSV file.</h3>
+                <p class="lead">The values containing addresses should be in a column name <i>address</i> or <i>Address</i>.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--File upload and submission-->
+<div class="container-fluid">
+  <div class="col-12 text-center">
+    <form action="{{url_for('success')}}" method="post" enctype="multipart/form-data">
+      <div class="file-upload-wrapper">
+        <input type="file" accept=".csv" name="file" class="file-upload" />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+	  <hr>
+  </div>
+</div>
+
+
+<!--Display the Table if submission is successful-->
+<div class="output container-fluid padding">
+	<div class="row welcome text-center">
+		<div class="col-12 padding">
+			<div class="col-12 padding">
+              {{text | safe}}
+              {% include [btn] ignore missing %}
+            </div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+

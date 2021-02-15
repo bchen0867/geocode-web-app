@@ -1,0 +1,39 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title %}Bibi Geocode Web App{% endblock %}
+
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css\main.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container-fluid padding">
+	<div class="row welcome text-center">
+		<div class="col-12 padding">
+			<h1 class="display-4">Submission Failed</h1>
+			<hr>
+			<div class="col-12">
+                <p class="lead">
+                  {{text | safe}}
+                </p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
