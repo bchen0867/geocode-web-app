@@ -1,6 +1,6 @@
 # geocode-web-app
 
-This simple web applicature features **address geocoding (converting addresses to latitude/longitude pairs) in bulk**.
+This simple web application features **address geocoding (converting addresses to latitude/longitude pairs) in bulk**.
 
 The user can upload a csv file containing an address column to the web app, and the latitude and longitude columns will be generated and added to the table. The table will be displayed on the website directly as shown below, and can be downloaded as well.
 
